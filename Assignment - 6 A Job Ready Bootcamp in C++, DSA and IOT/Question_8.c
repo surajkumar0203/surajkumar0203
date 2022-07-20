@@ -8,7 +8,7 @@ int main()
     printf("Enter A number: ");
     scanf("%d",&number);
 
-    for(i=2;i<=number-1;i++)
+    for(i=2;i<=number/2;i++)
     {
         if(number%i==0)
             break;
