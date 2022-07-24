@@ -20,27 +20,40 @@ int main()
     printf("Enter electricity unit Charges: ");
     scanf("%d",&units);
 
-    switch(units)
+    switch(units<=50)
     {
-        case 50 ... 99:
-            charges=0.50*units;
+        case 1:
+            charges=units*0.50;
             break;
-        case 100 ... 199:
-            charges=0.75*units;
-            break;
-        case 200 ... 249:
-            charges=1.20*units;
-            break;
-        default:
-            charges=1.50*units;
+        case 0:
+            switch(units<=150)
+            {
+                case 1:
+                    charges=25+(units-50)*0.75;
+                    break;
+                case 0:
+                    switch(units<=250)
+                    {
+                        case 1:
+                            charges=100+(units-150)*1.20;
+                            break;
+                        case 0:
+                            charges=220+(units-250)*1.50;
+                            break;
+                    }
+                break;
+            }
+        break;
+            
+
     }
     
-    float survice_charge=(120*charges)/100;
+    float survice_charge=charges*0.20;
+
+    float total=charges+survice_charge;
     
-    printf("electricity bill %0.2f\n",charges);
-    charges+=survice_charge;
-    printf("Survice Charge 20%% %.3f\n",survice_charge);
-    printf("Total %0.2f\n",charges);
-    
+    printf("Charge: %.2f\n",charges);
+    printf("Survice Charge: %.2f\n",survice_charge);
+    printf("Total electricity bill %.2f\n",total);
     return 0;
 }
