@@ -28,7 +28,7 @@ int main()
         printf("%d\n",num);
     }
     else
-        printf("Only single Digits alow\n");
+        printf("Only single Digits allow\n");
     
     
     return 0;
