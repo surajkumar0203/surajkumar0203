@@ -7,12 +7,13 @@ function.
 #include<stdio.h>
 void sum_of_series(int num)
 {
-    int fact=1,j=1;
+    int fact=1,j=1,sum=0;
     for(int i=1;i<=num;i++)
     {
         fact=fact*i;
-        printf("%d ",(i-1)+fact);
+        sum=sum+fact/i;
     }
+    printf("%d\n",sum);
     
 }
 int main()
